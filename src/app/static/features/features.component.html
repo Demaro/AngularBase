@@ -5,6 +5,63 @@
     </div>
   </div>
   <div class="row align-items-end">
+    
+      <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+          <mat-card>
+            <mat-card-title><code>^3.5.0</code>Python</mat-card-title>
+            <mat-card-subtitle>
+                Python is powerful... and fast; 
+                plays well with others; 
+                runs everywhere...
+            </mat-card-subtitle>
+            <mat-card-actions>
+              <a mat-button href="https://www.python.org/doc/" target="_blank">
+                <i class="fa fa-book fa-lg"></i> Docs
+              </a>
+              <a mat-button href="https://github.com/python" target="_blank">
+                <i class="fa fa-github fa-lg"></i> Github
+              </a>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+        <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+            <mat-card>
+              <mat-card-title><code>^3.3.3</code>Django REST </mat-card-title>
+              <mat-card-subtitle>
+                  Django REST framework is a powerful and flexible toolkit for building Web APIs.
+              </mat-card-subtitle>
+              <mat-card-actions>
+                <a mat-button href="http://www.django-rest-framework.org/topics/documenting-your-api/" target="_blank">
+                  <i class="fa fa-book fa-lg"></i> Docs
+                </a>
+                <a mat-button href="https://github.com/encode/django-rest-framework" target="_blank">
+                  <i class="fa fa-github fa-lg"></i> Github
+                </a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+
+          <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+              <mat-card>
+                <mat-card-title><code>^2.7.3.1</code>PostgreSQL</mat-card-title>
+                <mat-card-subtitle>
+                    psycopg2 - Python-PostgreSQL Database Adapter
+                </mat-card-subtitle>
+                <mat-card-actions>
+                  <a mat-button href="https://pypi.python.org/pypi/psycopg2" target="_blank">
+                    <i class="fa fa-book fa-lg"></i> Docs
+                  </a>
+                  <a mat-button href="https://github.com/psycopg/psycopg2" target="_blank">
+                    <i class="fa fa-github fa-lg"></i> Github
+                  </a>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+
+          
+
+
     <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
       <mat-card>
         <mat-card-title><code>{{versions.angular}}</code>Angular</mat-card-title>
@@ -69,22 +126,7 @@
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
-      <mat-card>
-        <mat-card-title><code>{{versions.rxjs}}</code>RxJS</mat-card-title>
-        <mat-card-subtitle>
-          Reactive programming with async collections using Observables.
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-button href="http://reactivex.io/rxjs/" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
-          </a>
-          <a mat-button href="https://github.com/ReactiveX/RxJS" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+
     <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
       <mat-card>
         <mat-card-title><code>{{versions.bootstrap}}</code>Bootstrap</mat-card-title>
@@ -115,30 +157,6 @@
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
-      <mat-card>
-        <mat-card-title>Themes</mat-card-title>
-        <mat-card-subtitle>Flexible theming support for provided and custom components</mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-button href="https://material.angular.io/guide/theming" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
-          </a>
-          <a mat-button href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1" target="_blank">
-            <i class="fa fa-medium fa-lg"></i> Blog
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
-      <mat-card>
-        <mat-card-title>Lazy loading</mat-card-title>
-        <mat-card-subtitle>Faster startup time with lazy loaded feature modules</mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-button href="https://angular.io/docs/ts/latest/guide/router.html#!#lazy-loading-route-config" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+
   </div>
 </div>

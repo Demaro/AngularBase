@@ -1,0 +1,38 @@
+<div class="container">
+    <h3 mat-dialog-title>Iniciar Sesion</h3>
+    
+    
+  
+    <form class="mat-dialog-content"   #formControl="ngForm">
+  
+        <button mat-raised-button  class="color" (click)="onLoginGoogle()">
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+             Ingresar con Google 
+     </button>
+      <!--Textarea for demo purposes-->
+     <div class="form">
+        <mat-form-field color="primary">
+          <input matInput #input class="form-control" placeholder="Correo Electronico"  [(ngModel)]="data.email" id="email" name="email" email required >
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage_email()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+          <mat-form-field color="primary">
+            <input matInput type="password" #input class="form-control" [(ngModel)]="data.password" placeholder="Contraseña" id="password" name="password" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+  
+
+
+      <div mat-dialog-actions> 
+          
+        <button mat-raised-button  color="accent" [type]="submit" [disabled]="!formControl.valid"  (click)="loggin(formControl)">Ingresar</button>
+        <button mat-raised-button (click)="onNoClick()" tabindex="-1">Cancelar</button>
+      </div>
+      <br>
+    </form>
+  
+  </div>
+  

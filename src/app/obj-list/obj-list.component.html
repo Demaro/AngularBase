@@ -1,0 +1,75 @@
+<div class="container">
+     <br>
+  
+      <div class="row">
+          <div class="col-12 col-lg-12">
+            <h1 class="main-heading">Tickets 
+           
+              
+          <a *ngIf="af.authenticated" mat-fab color="primary" class="new pull-right" (click)="addNew()">
+              <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+          </a>
+         
+        </h1>    
+        </div>  
+      </div>      
+  
+  
+    
+  <mat-form-field color="primary">
+   
+      <input matInput  [(ngModel)]="searchText" placeholder="Filtrar" >
+      
+  </mat-form-field>
+  
+  
+  
+  <br>
+  <br>
+
+
+ 
+    <div class="row align-items-end">
+    <br>
+    <div  class="col-md-6 col-lg-6"
+        *ngFor="let devps of dataService.employeeList | filter:searchText ">
+          <mat-card class="hvr">
+            
+            <mat-card-title><code>{{devps.createdAt}}</code><div class="code">{{devps.name}}</div></mat-card-title>
+            
+            <mat-card-subtitle> 
+                {{devps.description}}.
+              </mat-card-subtitle>
+              <mat-card-title><code>Estado: {{devps.status.name}}</code></mat-card-title>
+                 <!-- <i class="fa fa-user fa-1x"></i> {{devps.user.username}}. --> 
+                 <div *ngIf="!dataService.isLoged" >  
+                 <br>
+               </div>
+               
+                  
+            <mat-card-actions *ngIf="af.authenticated">
+                <button mat-icon-button class="btn" color="primary" (click)="showForEdit(i, devps.id, devps.name, devps.description, devps.status.id)">
+                    <mat-icon aria-label="Edit">edit</mat-icon>
+                  </button>
+  
+                  <button mat-icon-button color="primary" class="btn" (click)="deleteItem(i, devps.id, devps.name, devps.user.username, devps.status.name)">
+                      <mat-icon aria-label="Delete">delete</mat-icon>
+                    </button>
+            </mat-card-actions>
+        
+          </mat-card>
+          <br>
+        </div>
+  
+    <br>
+    
+  </div>
+  
+  <br>
+
+</div>
+  
+<br>
+  
+  
+  

@@ -1,37 +1,78 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <h1>Angular ngRx Material Starter</h1>
-      <div class="actions">
-        <a [ngClass]="animateOnRouteEnter"
-           mat-raised-button color="primary" routerLink="../features">
-          Check Features
-        </a>
-        <a mat-raised-button color="accent" routerLink="../examples"
-           [ngClass]="animateOnRouteEnter">
-          Check Examples
-        </a>
-        <a mat-raised-button routerLink="../settings"
-           [ngClass]="animateOnRouteEnter">
-          Change Theme
-        </a>
-        <span [ngClass]="animateOnRouteEnter">or</span>
-        <a mat-raised-button
-           [ngClass]="animateOnRouteEnter"
-           target="_blank"
-           href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
-          <i class="fa fa-medium"></i> Check Blog Post
-        </a>
-      </div>
-      <div class="get-started" [ngClass]="animateOnRouteEnter">
-        <h2>Getting started</h2>
-        <code>git clone
-          https://github.com/tomastrajan/angular-ngrx-material-starter.git
-          new-project</code><br>
-        <code>cd new-project</code><br>
-        <code>npm install</code><br>
-        <code>npm start</code>
-      </div>
+
+        <mat-card [ngClass]="animateOnRouteEnter">
+
+      <h1 >Abre una Cuenta</h1>
+      <h2>Comienza. ¡Es gratis!</h2>
+      <mat-divider></mat-divider>
+
+      
+      <form class="mat-dialog-content"   #formControl="ngForm">
+
+          
+            <div class="form">
+            <mat-form-field color="primary" >
+            <input matInput  #input placeholder="Nombre"  name="name" class="form-control"  [(ngModel)]="name"required>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            </div>
+
+
+            <div class="form">
+                <mat-form-field color="primary">
+            <input matInput #input class="form-control" placeholder="Apellidos" [(ngModel)]="lastname" name="lastname"  >
+           
+            </mat-form-field>
+            </div>
+
+            <div class="form">
+                <mat-form-field color="primary">
+            <input matInput #input class="form-control" placeholder="Correo Electronico"  [(ngModel)]="email"  name="email" id="email"  email required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage_email()}}</mat-error>
+            </mat-form-field>
+            </div>
+
+            <div class="form">
+                <mat-form-field color="primary">
+            <input matInput type="password" #input #message minlength="8" maxlength="8" class="form-control" placeholder="Contraseña"  [(ngModel)]="password" name="password" required>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            <mat-hint align="end">{{message.value.length}} / 8</mat-hint>
+            </mat-form-field>
+            </div>
+            <br>
+
+            <mat-card-subtitle class="center">
+              Al hacer clic en unirte, aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de LinkedIn.
+            </mat-card-subtitle>
+           
+
+            <div mat-dialog-actions class="center">
+
+
+            <a [ngClass]="animateOnRouteEnter" 
+               mat-raised-button color="primary" class="size" [type]="submit" [disabled]="!formControl.valid" >
+              Únete ahora
+              </a>
+            </div>
+
+           
+          </form>
+         
+
+
+
+        </mat-card>
+        </div>
+      
     </div>
   </div>
-</div>
+
+
+ 
+    
+
+
+  
+

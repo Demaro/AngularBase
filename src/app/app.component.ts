@@ -6,6 +6,13 @@ import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
 import { filter } from 'rxjs/operators/filter';
+import { DataService } from '../app/static/services/data.service';
+import { AuthenticationService } from '../app/static/services/authentication.service'
+import { Observable } from 'rxjs/Observable';
+import { MatDialog } from '@angular/material';
+
+import { LogginComponent } from '../app/static/dialog/loggin/loggin.component';
+import * as firebase from 'firebase/app';
 
 import {
   ActionAuthLogin,
@@ -16,6 +23,8 @@ import {
 import { environment as env } from '@env/environment';
 
 import { NIGHT_MODE_THEME, selectorSettings } from './settings';
+import { User } from '@app/static/models/models';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'anms-root',
@@ -26,17 +35,24 @@ import { NIGHT_MODE_THEME, selectorSettings } from './settings';
 export class AppComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
+
+
+  isLoged: boolean = false;
+
+
+ 
+
   @HostBinding('class') componentCssClass;
 
   isProd = env.production;
   envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
-  logo = require('../assets/logo.png');
+
   navigation = [
-    { link: 'about', label: 'About' },
+    { link: 'about', label: 'Inicio' },
     { link: 'features', label: 'Features' },
-    { link: 'examples', label: 'Examples' }
+    { link: 'crud', label: 'Modulos' }
   ];
   navigationSideMenu = [
     ...this.navigation,
@@ -48,10 +64,26 @@ export class AppComponent implements OnInit, OnDestroy {
     public overlayContainer: OverlayContainer,
     private store: Store<any>,
     private router: Router,
-    private titleService: Title
-  ) {}
+    private titleService: Title,
+    private dataService: DataService,
+    public dialog: MatDialog,
+    public af: AuthenticationService,
+
+  ) {
+    
+  }
+
+
+  ngOnChanges() {
+    this.dataService.getEmployeeList();
+
+    this.isLoged = true;
+ 
+  }
 
   ngOnInit(): void {
+
+    this.dataService.getEmployeeList();
     this.store
       .select(selectorSettings)
       .pipe(takeUntil(this.unsubscribe$))
@@ -100,7 +132,19 @@ export class AppComponent implements OnInit, OnDestroy {
     this.store.dispatch(new ActionAuthLogin());
   }
 
+
+
+
   onLogoutClick() {
-    this.store.dispatch(new ActionAuthLogout());
+
+    this.dataService.user_get = User['']  ;
+    this.af.logout();
+    this.af.authenticated = false;
   }
+
+  showLoggin() {
+    const dialogRef = this.dialog.open(LogginComponent, {
+      data: { }
+    });
+}
 }

@@ -1,0 +1,52 @@
+<div class="container">
+    
+      <h3 mat-dialog-title>Agregar Nuevo</h3>
+    
+      <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+    
+    
+        <!--Textarea for demo purposes-->
+        <div class="form">
+           
+          <input type="hidden" name="id" #id="ngModel" [(ngModel)]="data.id">
+      
+          <mat-form-field color="primary">
+            <input matInput #input class="form-control" placeholder="Nombre" [(ngModel)]="data.name" name="name" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+    
+        <!--Contains mat-hint for characters count and has maxLengt set-->
+    
+        <div class="form">
+          <mat-form-field color="primary">
+           
+            <textarea matInput placeholder="Descripcion" [(ngModel)]="data.description" name="description" required></textarea>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+    
+        <div  class="col-md-6 col-lg-4"></div>
+        <div class="form">
+            <mat-form-field color="primary">
+            <mat-select placeholder="Estado" [(ngModel)]="data.status" name="status" required>
+              <mat-option *ngFor="let status of status" [value]="status.value">
+                  {{ status.name }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            
+         
+        </div>
+    
+        <div mat-dialog-actions>
+          <button mat-raised-button  color="accent" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd(formControl)">Guardar</button>
+          <button mat-raised-button (click)="onNoClick()" tabindex="-1">Cancelar</button>
+        </div>
+        <br>
+      </form>
+    
+    
+    </div>
+    

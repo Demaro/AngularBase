@@ -11,6 +11,7 @@
 
 mat-card {
   margin: 0 0 20px 0;
+  border-radius: 15px 15px 50px 5px;
 
   mat-card-title {
     position: relative;
@@ -20,9 +21,11 @@ mat-card {
       top: 11px;
       right: 0;
       float: right;
-      font-size: 10px;
+      font-size: 12px;
     }
+    
   }
+  
   mat-card-subtitle {
     min-height: 60px;
   }
@@ -47,11 +50,7 @@ mat-card {
 
 }
 
-.form {
-  position: absolute;
-  height: 1px;
-  width: 80%;
-}
+
 
 .hvr:hover {
   background-color: #ebebeb69;
@@ -65,6 +64,20 @@ mat-card {
 .code {
   color: #3f51b5;
 }
+
+mat-form-field {
+    width: 100%;
+  }
+
+
+  .status {
+    position: absolute;
+    top: 135px;
+    right: 30px;
+    float: right;
+    font-size: 15px;
+  }
+  
 
 
 

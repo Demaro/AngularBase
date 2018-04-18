@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ObjListComponent} from '../app/obj-list/obj-list.component'
 
 import { SettingsComponent } from './settings';
 
@@ -16,14 +17,12 @@ const routes: Routes = [
       title: 'Settings'
     }
   },
-  {
-    path: 'examples',
-    loadChildren: 'app/examples/examples.module#ExamplesModule'
-  },
+
   {
     path: '**',
     redirectTo: 'about'
-  }
+  },
+
 ];
 
 @NgModule({

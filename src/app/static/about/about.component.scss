@@ -6,7 +6,12 @@
 
   h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  h2 {
+    text-align: center;
+    font-size: 1em;
     text-transform: uppercase;
   }
 
@@ -23,6 +28,7 @@
 
     a {
       margin: 0 0 10px 0;
+      padding: 0 90px;
     }
   }
 
@@ -49,7 +55,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: url('../../../assets/intro.jpg') no-repeat center top;
+    background: url('/static/ang/assets/intro.jpg') no-repeat center top;
     background-size: cover;
     opacity: 0.7;
     content: '';
@@ -70,6 +76,7 @@
 
   .container {
     position: relative;
+    width: 40%;
   }
 }
 
@@ -108,3 +115,37 @@
     }
   }
 }
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 270px;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  padding-top: 6px;
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 16px;
+  flex-grow: 1;
+
+}
+
+
+.center {
+  text-align: center;
+}
+
+
+
+.size {
+  padding: 0 70px;
+} 

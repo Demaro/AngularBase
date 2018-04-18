@@ -21,8 +21,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   settings: SettingsState;
 
   themes = [
-    { value: 'DEFAULT-THEME', label: 'Blue' },
-    { value: 'LIGHT-THEME', label: 'Light' },
+    { value: 'DEFAULT-THEME', label: 'Light' },
+    { value: 'LIGHT-THEME', label: 'Blue' },
     { value: 'BLACK-THEME', label: 'Dark' }
   ];
 
